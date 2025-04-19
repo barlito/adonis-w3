@@ -1,5 +1,16 @@
 {
   "commands": {
+    "listen:factory": {
+      "settings": {
+        "loadApp": true
+      },
+      "commandPath": "./commands/ListenFactory",
+      "commandName": "listen:factory",
+      "description": "Listen to PairCreated events on the factory",
+      "args": [],
+      "aliases": [],
+      "flags": []
+    },
     "dump:rcfile": {
       "settings": {},
       "commandPath": "@adonisjs/core/build/commands/DumpRc",
