@@ -1,0 +1,23 @@
+version: "3.8"
+
+services:
+  app:
+    build: .
+    ports:
+      - "3333:3333"
+    volumes:
+      - ./:/home/node/app
+    working_dir: /home/node/app
+    command: ["node", "ace", "serve", "--watch"]
+    environment:
+      - HOST=0.0.0.0
+      - PORT=3333
+      - NODE_ENV=development
+    depends_on:
+      - redis
+
+  redis:
+    image: redis:7-alpine
+    ports:
+      - "6379:6379"
+
